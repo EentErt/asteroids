@@ -7,6 +7,7 @@ from shot import Shot
 class Player(CircleShape):
     def __init__(self, x, y, PLAYER_RADIUS):
         super().__init__(x, y, PLAYER_RADIUS)
+        self.shot_type = ["breach_round"]
         self.rotation = 0
         self.cooldown = 0
 
@@ -55,6 +56,7 @@ class Player(CircleShape):
         shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation)
         shot.velocity *= PLAYER_SHOOT_SPEED
         self.cooldown = PLAYER_SHOOT_COOLDOWN
+        shot.shot_type = self.shot_type
 
     
 
