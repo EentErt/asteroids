@@ -25,6 +25,7 @@ def main():
 
     while True:
         screen.fill((0, 0, 0))
+        player_character.update(dt)
         player_character.draw(screen)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
